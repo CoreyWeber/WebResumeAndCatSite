@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Corey Weber Resume</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel="stylesheet" type="text/css" href="/templates/css/css1.css" media="screen" />
+</head>
+
+<body>
+
+<div id="container"> 
+
+  <div id="header">
+    <div class="headtitle">Contact Me</div>
+  </div>
+
+  <div id="menu"> 
+    <ul>
+      <li><a href="/" title="">HOME</a></li>
+      <li><a href="me" title="">ABOUT ME</a></li>
+      <li><a href="cat" title="">CAT SITE</a></li>
+      <li><a href="contact" title="">CONTACT ME</a></li>
+      <li><a href="source" title="">SOURCE LINKS</a></li>
+
+    </ul>
+  </div>
+
+
+  <div id="content"> 
+
+    <div id="insidecontent"> <br>
+      <h1>Email</h1>
+      	<ul>
+	   <h3><a href="mailto:corey.weber@hotmail.com?Subject=Contacting%20Corey" target="_top">corey.weber@hotmail.com</a></h3>
+	</ul>
+	<h1>Phone</h1>
+	<ul>
+		<h3>1(902)388-1552</h3>
+	</ul>
+	<h1>LinkedIn</h1>
+	<ul>
+	<h3><a href="www.linkedin.com/in/coreyweber/en
+">www.linkedin.com/in/coreyweber/en</a></h3>
+	</ul>
+    </div>
+
+    
+
+    <div style="clear: both;"></div>
+
+  </div>
+
+
+
+  <div id="footer"> <span>Copyright © 2005 | Corey Weber</span> 
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="/templates/css/css.css"/>
+		<link rel="shortcut icon" href="images/logo-png.ico">
+		<title>
+			Adopt-A-Cat Home
+		</title>
+	</head>
+<body>	
+	
+	<div id="header">
+		<img src="images/logo-png.jpg" width= "200px" height= "150px" style= "float:left;" />
+		<h2 style="margin-bottom:0;text-align:center;">Adopt a cat today!</h2>
+	
+		<div id="header2">
+			<h4> Search by age,color and size!</h4> 
+			<form method = "post" action = "/Filter">
+	
+			<select name = "age" >
+			<option>AGE</option>
+			<option>kitten</option>
+			<option>adult</option>
+			<option>senior</option>
+             		</select>
+	
+      			<select name = "color">
+			<option>COLOR</option>
+			<option>white</option>
+			<option>black</option>
+			<option>orange</option>
+			<option>grey</option>
+		        </select>
+
+		        <select name = "size">
+			<option>SIZE</option>
+			<option>small</option>
+			<option>medium</option>
+			<option>large</option>
+		        </select>
+
+			<input type="Submit" value="Search">
+			</form>
+		</div>
+	</div>
+	
+	<div id="menu">
+	
+		<div><b>Menu</b></div><br>
+	
+		<form method= "get" action = "/cat">
+		<input type="Submit" value = "Home">
+		</form><br>
+	
+		<form method = "get" action = "/place">
+		<input type="Submit" value="Place A Cat For Adoption">
+		</form><br>
+	
+		<form method = "get" action = "/adoptees">
+		<input type="Submit" value="Show all Adoptees">
+		</form><br>
+		
+		<h3 text-align="center" style = color:green><u>Prices</u></h3>
+		
+		<u>Kittens and Adults</u><br>
+		<span style="color:green;">$40</span><br>
+		<u>Seniors</u><br>
+		<span style="color:green;">$20</span><br><br>
+		<span> Cheapest prices you will find! <br><br> Lowest price garantee!</span>
+	</div>
+	
+	<div id="content">
+		
+		<h3 style= "text-align: center; color: green;"> These are our cats! </h3>
+		
+		{% for cat in cat_list %}
+		{% empty %}
+			<h2> There are no cats in this list.</h2>
+		{% endfor %}
+	
+		
+		{% for cat in cat_list %}
+			
+			<form method= "get" action="/adopt">
+                	<h3><u>{{ cat.name }}</u> </h3>
+                	<img src="img?entity_id={{cat.key}}" height = 150/><br>
+		        <span>Age: </span>{{cat.age}}<br>
+		    	<span>Color: </span>{{cat.color}}<br>  
+		    	<span>Size: </span>{{cat.size}}<br><br>
+		    	<span>Description</span><br>{{cat.description}}<br>
+		    	<input type="hidden" value= "{{ cat.key }}" name= "catKey"/>
+		    	<input type="hidden" value= "{{ cat.name }}" name = "catName"/>
+		    	<input type="Submit" action="get" value="Adopt">  
+		    	</form>
+		    	                                           
+        	{% endfor %}	
+		
+	</div>
+
+</body>
+</html><LINK rel="stylesheet" type="text/css" href="stylesheet.css" title="Default Styles" media="screen"/>	
+	

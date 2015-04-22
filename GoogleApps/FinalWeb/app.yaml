@@ -1,0 +1,20 @@
+application: coreyweber111
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+
+- url: /templates/css
+  static_dir: templates/css
+  
+- url: /images
+  static_dir: images
+
+- url: /.*
+  script: final.application
+
+
+
+

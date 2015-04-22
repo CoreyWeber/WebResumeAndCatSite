@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<span style = "color: blue; font-weight: bold">
+      {{firstName}}</span>.
+      Thank you for completing the survey.<br />
+      You have been added to the <span style = "color: blue;
+      font-weight: bold">{{book}} </span> mailing list.<br /><br />
+
+	<form action='/List'>
+      <input type="hidden" value="{{book}}" name="book" />
+      <input type="submit" value="Show All People Inside This Mailing List"></form>
+
+      <span style = "font-weight: bold">
+      The following information has been saved in our database:
+      </span><br />
+
+      <table style = "border: 0; border-width: 0;
+         border-spacing: 10">
+      <tr><td style = "background-color: yellow">Name </td>
+          <td style = "background-color: yellow">Email</td>
+          <td style = "background-color: yellow">Phone</td>
+          <td style = "background-color: yellow">OS</td></tr>
+
+      <tr><td>{{firstName}} {{lastName}}</td><td>{{email}}</td>
+          <td>{{phone}}</td><td>{{os}}</td></tr>
+      </table>
+
+      <br /><br /><br />
+
+      </body>
+
+	<form action='/unfList'>
+      <input type="hidden" value="{{book}}" name="book" />
+      <input type="submit" value="Show All People Registered">
+      <span style = "font-weight: bold"></form>
+	
+</html>
+      
+

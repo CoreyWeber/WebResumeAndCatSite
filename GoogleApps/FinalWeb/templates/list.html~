@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+     <span style = "font-weight: bold">
+      The following information has been saved in our database:
+      </span><br />
+
+      <table style = "border: 0; border-width: 0;
+         border-spacing: 10">
+      <tr><td style = "background-color: yellow">Name </td>
+          <td style = "background-color: yellow">Email</td>
+          <td style = "background-color: yellow">Phone</td>
+          <td style = "background-color: yellow">OS</td>
+	  <td style = "background-color: yellow">Book</td></tr>
+
+      {% for registered in registered_list %}
+                <tr >
+                    <td>{{ registered.firstName }} {{ registered.lastName }}</td>
+                    <td>{{ registered.email }}</td>
+                    <td>{{ registered.phone }}</td>
+                    <td>{{ registered.os }}</td>
+		    <td>{{ registered.book }}</td>
+                </tr>
+      {% endfor %}
+      </table>
+	<form action='/'>
+      <input type="submit" value="MainPage"></form>
+	<form action='/List'>
+      </center></body>
+</html>
+      
+

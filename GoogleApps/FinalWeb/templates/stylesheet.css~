@@ -1,0 +1,32 @@
+#header
+{
+	background-color:#CCFF33;
+	height:150px;
+}
+#header2
+{
+	border: solid;
+	border-width: medium; 
+	margin-left:10%; 
+	margin-right:10%; 
+	width: 100%;
+	text-align:center;
+	background-color:#00FF00
+}
+#menu
+{
+	border: solid; 
+	border-width: thin; 
+	width: 100%;
+	border-top:none;
+	background-color:#FFD700;
+	height: 1600px ;
+	width:200px;
+	float:left;
+}
+#content
+{
+	background-color:#EEEEEE;
+	width:1050px;
+	float:left;	
+}

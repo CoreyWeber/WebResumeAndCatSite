@@ -1,0 +1,88 @@
+import logging
+import os
+import re
+import webapp2
+from google.appengine.ext.webapp import template
+from google.appengine.ext import db
+
+telephoneExpression = \
+   re.compile( r'^\(\d{3}\)\d{3}-\d{4}$' )
+
+class MainPage(webapp2.RequestHandler):
+
+	def get(self):
+	
+		path = os.path.join(os.path.dirname(__file__),'templates/index.html')
+		self.response.write(template.render(path,{}))
+	
+class Registered(db.Model):
+	firstName = db.StringProperty()
+	lastName = db.StringProperty()
+	email = db.EmailProperty()
+	phone = db.PhoneNumberProperty()
+	book = db.StringProperty()
+	os = db.StringProperty()	
+
+class Register(webapp2.RequestHandler):
+	
+	def post(self):
+		
+		
+		global personInfo
+		personInfo = { 'firstName' : self.request.get("firstname"),
+                  'lastName' : self.request.get("lastname"),
+                  'email' : self.request.get("email"),
+                  'phone' : self.request.get("phone"),
+                  'book' : self.request.get("book"),
+                  'os' : self.request.get("os")}
+
+		registration = Registered(firstName=personInfo['firstName'],lastName=personInfo['lastName'],email=personInfo['email'],phone=personInfo['phone'],book=personInfo['book'],os=personInfo['os'])
+		registration.put()
+
+		for item in personInfo:
+			if personInfo[item] == "":
+				self.printFormError()
+				break
+			elif telephoneExpression.match( personInfo[ 'phone' ] ):
+				self.success()	
+				break				
+			else:
+				self.printPhoneError()
+				break		
+
+	def success(self):
+
+		path = os.path.join(os.path.dirname(__file__),'templates/reply.html')
+		self.response.write(template.render(path,personInfo))
+		
+		
+	def printFormError(self):
+
+		path = os.path.join(os.path.dirname(__file__),'templates/printFormError.html')
+		self.response.write(template.render(path,{}))	
+
+	def printPhoneError(self):
+
+		path = os.path.join(os.path.dirname(__file__),'templates/printPhoneError.html')
+		self.response.write(template.render(path,{}))
+
+
+class List(webapp2.RequestHandler):
+	def get(self):	
+		registered_query = db.Query(Registered) 
+		book = self.request.get('book') 
+		registered_query = registered_query.filter('book =', book)
+		registered_list = registered_query.fetch(10)
+		path = os.path.join(os.path.dirname(__file__), 'templates/list.html')
+		self.response.out.write(template.render(path, {'registered_list' : registered_list}))
+		
+class UnfList(webapp2.RequestHandler):
+	def get(self):	
+		registered_list = db.Query(Registered) 
+		registered_list = registered_list.fetch(10)
+		path = os.path.join(os.path.dirname(__file__), 'templates/list.html')
+		self.response.out.write(template.render(path, {'registered_list' : registered_list}))
+		
+application = webapp2.WSGIApplication([('/',MainPage),('/register',Register),('/List',List),('/Registered',Registered),('/unfList',UnfList)],debug=True)
+
+

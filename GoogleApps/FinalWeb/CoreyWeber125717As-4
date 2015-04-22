@@ -1,0 +1,16 @@
+1. Website Title:
+
+Cat Adoption
+
+2. Functions:
+
+(1) Displays all cats up for adoption from a database
+(2) Filtering cats by color, age, and size.
+(3) Form for adopting a cat with adoptee database
+(4) Deletion of cats from database after adoption
+
+3. Database:
+
+(1) CAT table: database with AGE (kitten,adult,senior), COLOR, SIZE (small, medium, large)
+    main page filtering of database
+(2) OWNER table: Adoption list database with NAME, CAT (adopted cat),EMAIL,CREDITCARD

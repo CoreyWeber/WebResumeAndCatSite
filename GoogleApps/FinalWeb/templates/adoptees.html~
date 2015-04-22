@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="/templates/css/css.css"/>
+	<link rel="shortcut icon" href="images/logo-png.ico">
+	<title>Adopt-A-Cat Adoptees</title>
+	<style>
+	
+	</style>
+</head>
+<body>
+	<div id="header">
+	<img src="images/logo-png.jpg" width= "200px" height= "150px" style= "float:left;" />
+	<h2 style="margin-bottom:0;text-align:center;">Adopt a cat today!</h2>
+	
+		<div id="header2" style="font-weight:bold">
+			<br><br>
+			List of all Adoptees
+		</div>
+	
+	</div>
+		
+	
+	<div id="menu">
+	<b>Menu</b><br><br>
+	
+	<form method= "get" action = "/">
+	<input type="Submit" value = "Home">
+	</form><br>
+	
+	<form method = "get" action = "/place">
+	<input type="Submit" value="Place A Cat For Adoption">
+	</form><br>
+	
+	<form method = "get" action = "/adoptees">
+	<input type="Submit" value="Show all Adoptees">
+	</form><br>
+	
+	<h3 text-align="center" style = color:green><u>Prices</u></h3>
+		
+	<u>Kittens and Adults</u><br>
+	<span style="color:green;">$40</span><br>
+	<u>Seniors</u><br>
+	<span style="color:green;">$20</span><br><br>
+	<span> Cheapest prices you will find! <br><br> Lowest price garantee!</span>
+	
+	</div>
+	
+	<div id="content">
+	<h3 style= "text-align: center; color: green;"> These are the people giving our cats a place to stay!</h3> 
+	<table style = "border: 0; border-width: 0;
+         border-spacing: 10"cellspacing = "30">
+      <tr><td style = "background-color: #FFFF00">Name </td>
+          <td style = "background-color: #FFFF00">Email</td>
+          <td style = "background-color: #FFFF00">Phone</td>
+          <td style = "background-color: #FFFF00">Cat</td></tr>
+	{% for reg in person_list %}
+		<tr>
+                    	<td>{{ reg.firstName }} {{reg.lastName}}
+		    	<td> {{reg.email}}</td>   
+		  	<td> {{reg.phone}}</td>
+		  	<td> {{reg.cat}}</td>
+		    </tr>                                            
+        {% endfor %}
+        </table>
+        </div>	
+<html>

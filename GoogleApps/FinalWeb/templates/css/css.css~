@@ -1,0 +1,33 @@
+#header {
+			background-color:#CCFF33;
+			height:150px;
+			border: ridge;
+		}
+#header2{
+			border: solid;
+			border-width: medium; 
+			text-align:center;
+			background-color:#00FF00
+		}
+#menu{
+			border: solid; 
+			border-width: thin; 
+			border-top:none;
+			background-color:#FFD700;
+			height: 1600px ;
+			width:200px;
+			float:left;
+			font-size: 20px;
+			font-weight:bold;
+			text-align:center;
+		}
+		#content{
+			margin-left: 15px;
+			text-indent: 15px;
+			background-color:#EEEEEE;
+			width:83%;
+			float:left;	
+		}
+		span{
+			font-weight: bold;
+		}

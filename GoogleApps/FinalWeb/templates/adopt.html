@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<link rel="stylesheet" href="/templates/css/css.css"/>
+	<link rel="shortcut icon" href="images/logo-png.ico">
+	<title>Adopt-A-Cat Adopt</title>	
+	</head>
+<body>	
+	
+	<div id="header">
+	<img src="images/logo-png.jpg" width= "200px" height= "150px" style= "float:left;" />
+	<h2 style="margin-bottom:0;text-align:center;">Adopt a cat today!</h2>
+	
+	<div id="header2">
+	This is an adoptioin form.
+     	Please fill in all fields and click Register.
+	</div>
+	</div>
+	
+	<div id="menu">
+	<b>Menu</b><br><br>
+	
+	<form method= "get" action = "/">
+	<input type="Submit" value = "Resume">
+	</form><br>
+	
+	<form method= "get" action = "/cat">
+	<input type="Submit" value = "Home">
+	</form><br>
+	
+	<form method = "get" action = "/place">
+	<input type="Submit" value="Place A Cat For Adoption">
+	</form><br>
+	
+	<form method = "get" action = "/adoptees">
+	<input type="Submit" value="Show all Adoptees">
+	</form><br>
+	
+	<h3 text-align="center"style = color:green><u>Prices</u></h3>
+		
+	<u>Kittens and Adults</u><br>
+	<span style="color:green;">$40</span><br>
+	<u>Seniors</u><br>
+	<span style="color:green;">$20</span><br><br>
+	<span> Cheapest prices you will find! <br><br> Lowest price garantee!</span>
+	
+	</div>
+	
+	<div id="content">
+      
+  
+   <form method = "post" action = "/reply">
+   	<div>
+      I see you would like to adopt <span>{{cat_l.name}}</span>! Great choice!
+      </div><br><br>
+   
+      <div style = "color: blue">
+         Please fill out the fields below.<br>
+      </div>
+     
+
+      <label>First name:</label>
+      <input type = "text" name = "firstname" /><br><br>
+      <label>Last name:</label>
+      <input type = "text" name = "lastname" /><br><br>
+      <label>Email:</label>
+      <input type = "text" name = "email" /><br><br>
+      <label>Phone:</label>
+      <input type = "text" name = "phone" />
+      <div style = "font-size: 8pt">
+         Must be in the form (555)555-5555
+      </div><br><br>
+      <label>Credit card:</label>
+      <input type = "text"/>  
+      <div style = "font-size: 8pt">
+      	Not real credit card
+      </div><br><br>
+
+      <input type="hidden" value= "{{cat_l.key}}" name= "key"/>
+      <input type = "hidden" value = "{{cat_l.name}}" name = "catName"/>
+      <input type = "submit" value = "Adopt Cat" />
+   </form>
+	</div>
+</html>

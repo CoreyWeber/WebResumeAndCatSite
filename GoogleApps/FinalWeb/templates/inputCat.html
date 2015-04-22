@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="/templates/css/css.css"/>
+	<link rel="shortcut icon" href="images/logo-png.ico">
+   <title>Adopt-A-Cat Place</title>
+</head>
+
+<body>	
+	
+	<div id="header">
+	<img src="images/logo-png.jpg" width= "200px" height= "150px" style= "float:left;" />
+	<h2 style="margin-bottom:0;text-align:center;">Adopt a cat today!</h2>
+		<div id= "header2" style="font-weight:bold;" >
+			<br><br>
+			This is an adoption application.
+			Please fill in all fields and click "Place For Adoption".
+		</div>
+	</div>
+	
+	<div id="menu">
+	<b>Menu</b><br><br>
+	
+	<form method= "get" action = "/">
+	<input type="Submit" value = "Resume">
+	</form><br>
+	
+	<form method= "get" action = "/cat">
+	<input type="Submit" value = "Home">
+	</form><br>
+	
+	<form method = "get" action = "/place">
+	<input type="Submit" value="Place A Cat For Adoption">
+	</form><br>
+	
+	<form method = "get" action = "/adoptees">
+	<input type="Submit" value="Show all Adoptees">
+	</form><br>
+	
+	<h3 text-align="center"style = color:green><u>Prices</u></h3>
+		
+		<u>Kittens and Adults</u><br>
+		<span style="color:green;">$40</span><br>
+		<u>Seniors</u><br>
+		<span style="color:green;">$20</span><br><br>
+		<span> Cheapest prices you will find! <br><br> Lowest price garantee!</span>
+	</div>
+ 
+  <div id="content">
+  <h3 style= "text-align: center; color: green;"> Put a cat up for adoption here!</h3>
+   <form method = "post" action="/place" enctype= "multipart/form-data"">
+    
+      <div><label>Cat image:</label></div>
+      <div><input type="file" name="pic"/></div>
+      
+      <br></br>
+      
+      <div>      
+      <label> Cats name: </label>
+      <input type = "text" name = "name" >
+      </div>
+      
+      <br></br>
+      
+      <div>
+      <div><label> Description</label></div>
+      <textarea name = "description" rows = "5" cols = "60"></textarea>
+      </div>
+      
+      <br></br>
+      
+      <div>
+      <div><span>kitten</span>= younger than a year <span>adult</span>= older than a year <span>senior</span>= older than 7</div>
+	
+	<div><label>Age:</label>
+      <select name = "age">
+	<option>kitten</option>
+	<option>adult</option>
+	<option>senior</option>
+      </select></div>
+	
+	<br></br>
+	
+	<div>
+	<label>Color:</label>
+	
+      <select name = "color">
+	<option>white</option>
+	<option>black</option>
+	<option>orange</option>
+	<option>grey</option>
+      </select></div>
+	
+	<br></br>
+	<div>
+	<label>Size:</label>
+	
+       <select name = "size">
+	<option>small</option>
+	<option>medium</option>
+	<option>large</option>
+      </select></div>
+	<br></br>
+	
+      <input type = "submit" value = "Place For Adoption" >
+	</div>
+	</div>
+	
+   </form>
+</body>
+</html>
